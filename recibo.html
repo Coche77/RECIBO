@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Recibo Twin Oaks</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; color: #333; }
+        .header { display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #333; padding-bottom: 20px; }
+        /* Logo ajustado a 220px para mayor tamaño */
+        .logo { width: 220px; height: auto; display: block; } 
+        .info { text-align: right; }
+        input { border: none; border-bottom: 1px solid #ccc; width: 100%; padding: 5px; font-size: 1em; }
+        .content { margin-top: 30px; }
+        .field { margin-bottom: 15px; }
+        .firma-section { margin-top: 80px; display: flex; justify-content: center; }
+        .firma-box { width: 50%; border-top: 1px solid #000; text-align: center; padding-top: 10px; }
+        .no-print { margin-top: 30px; padding: 10px 20px; cursor: pointer; background: #004a99; color: white; border: none; border-radius: 4px; }
+        @media print { .no-print { display: none; } }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <img src="logo.jpg" alt="Logo Twin Oaks" class="logo" onerror="this.style.display='none'; alert('Error: Asegúrate de que el archivo de imagen se llame exactamente logo.jpg y esté en la misma carpeta.');">
+    
+    <div class="info">
+        <h3>RECIBO DE PAGO</h3>
+        <p>Folio: <input type="text" value="0001" style="width: 50px; text-align: right;"></p>
+        <p>Fecha: <input type="date"></p>
+    </div>
+</div>
+
+<div class="content">
+    <div class="field"><strong>Recibí de:</strong> <input type="text" placeholder="Nombre de quien paga"></div>
+    
+    <div class="field">
+        <strong>La cantidad de:</strong> 
+        <input type="text" placeholder="Ej. 1,500.50 o Mil quinientos pesos">
+    </div>
+    
+    <div class="field"><strong>Concepto del trabajo:</strong> <input type="text" placeholder="Detalle del servicio realizado"></div>
+
+    <div class="firma-section">
+        <div class="firma-box">Firma de quien recibe</div>
+    </div>
+</div>
+
+<button class="no-print" onclick="window.print()">Generar PDF / Imprimir Recibo</button>
+
+</body>
+</html>
